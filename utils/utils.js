@@ -19,10 +19,17 @@ function expandObject(b) {
   let c = { ...a, ...b };
   return c;
 }
+function removeItemFromArray(array, item) {
+  if (array.indexOf(item) > -1) {
+    array.splice(array.indexOf(item), 1);
+    return array;
+  }
+}
 
 module.exports = {
   add,
   square,
   divide,
   expandObject,
+  removeItemFromArray,
 };

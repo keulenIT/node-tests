@@ -14,10 +14,16 @@ describe("utils", () => {
     expect(res).toEqual(5).toBeA("number");
   });
   it("Should expand an object", () => {
-    let b = {
+    const b = {
       test2: 2,
     };
     const res = utils.expandObject(b);
     expect(res).toBeA("object").toEqual({ test: 1, test2: 2 });
+  });
+  it("Should remove an item from an array", () => {
+    const array = [1, 2, 3, 4, 5];
+    const item = 2;
+    const res = utils.removeItemFromArray(array, item);
+    expect(res).toBeA("array").toEqual([1, 3, 4, 5]);
   });
 });
