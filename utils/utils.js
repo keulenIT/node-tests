@@ -5,10 +5,15 @@ function add(a, b) {
 }
 
 function square(x) {
-  x * x;
+  return x * x;
+}
+
+function divide(a, b) {
+  return a / b;
 }
 
 module.exports = {
   add,
   square,
+  divide,
 };

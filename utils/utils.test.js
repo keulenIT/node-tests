@@ -1,25 +1,21 @@
 const utils = require("./utils");
 describe("utils", () => {
-  it("should add two numbers", () => {
+  it("Should add two numbers", () => {
     const res = utils.add(20, 10);
-    switch (res) {
-      case res !== 30:
-        throw new Error(`Expected 30 but got ${res}`);
-      case typeof res !== "number":
-        throw new Error(`Expected a number but output is ${typeof res}`);
-      default:
-        break;
+    if (res !== 30) {
+      throw new Error(`Expected 30 but got ${res}`);
     }
   });
-  it("square add two numbers", () => {
+  it("Should square a number", () => {
     const res = utils.square(10);
-    switch (res) {
-      case res !== 100:
-        throw new Error(`Expected 100 but got ${res}`);
-      case typeof res !== "number":
-        throw new Error(`Expected a number but output is ${typeof res}`);
-      default:
-        break;
+    if (res !== 100) {
+      throw new Error(`Expected 100 but got ${res}`);
+    }
+  });
+  it("Should divide two numbers", () => {
+    const res = utils.divide(10, 2);
+    if (res !== 5) {
+      throw new Error(`Expected 5 but got ${res}`);
     }
   });
 });
