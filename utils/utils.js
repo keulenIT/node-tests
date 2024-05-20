@@ -12,8 +12,17 @@ function divide(a, b) {
   return a / b;
 }
 
+function expandObject(b) {
+  let a = {
+    test: 1,
+  };
+  let c = { ...a, ...b };
+  return c;
+}
+
 module.exports = {
   add,
   square,
   divide,
+  expandObject,
 };
