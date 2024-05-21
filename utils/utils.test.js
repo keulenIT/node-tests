@@ -20,6 +20,8 @@ describe("utils", () => {
     const res = utils.expandObject(b);
     expect(res).toBeA("object").toEqual({ test: 1, test2: 2 });
   });
+});
+describe("More complex tests", () => {
   it("Should remove an item from an array", () => {
     const array = [1, 2, 3, 4, 5];
     const item = 2;
