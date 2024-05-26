@@ -1,6 +1,8 @@
 const request = require("supertest");
 
 let app = require("./server").app;
+const expect = require("expect");
+
 describe("Server tests", () => {
   it("Should return the correct text when calling GET on /", (done) => {
     request(app).get("/").expect(200).expect("Hello world!").end(done);
@@ -13,6 +15,14 @@ describe("Server tests", () => {
       .get("/about")
       .expect(404)
       .expect({ error: "Page doesn't exist" })
+      .end(done);
+  });
+  it("Should include the correct usernames", (done) => {
+    request(app)
+      .get("/users")
+      .expect((res) => {
+        expect(res.body).toInclude({ name: "Mathias", id: "1" });
+      })
       .end(done);
   });
 });

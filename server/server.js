@@ -10,6 +10,13 @@ app.get("/", (req, res) => {
   }
 });
 
+app.get("/users", (req, res) => {
+  res.status(200).send([
+    { name: "Mathias", id: "1" },
+    { name: "Luuk", id: "1" },
+  ]);
+});
+
 app.get("/about", (req, res) => {
   res.status(404).send({
     error: "Page doesn't exist",
