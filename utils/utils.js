@@ -26,10 +26,24 @@ function removeItemFromArray(array, item) {
   }
 }
 
+function asyncAdd(a, b, callback) {
+  setTimeout(() => {
+    callback(a + b);
+  }, 1000);
+}
+
+function asyncSquare(a, callback) {
+  setTimeout(() => {
+    callback(a * a);
+  }, 1000);
+}
+
 module.exports = {
   add,
   square,
   divide,
   expandObject,
   removeItemFromArray,
+  asyncAdd,
+  asyncSquare,
 };
